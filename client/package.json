@@ -50,6 +50,7 @@
     "papaparse": "5.4.1",
     "pinia": "2.1.7",
     "qrcode": "1.5.3",
+    "rvfc-polyfill": "^1.0.7",
     "sass": "1.69.5",
     "swiper": "11.0.4",
     "tippy.js": "6.3.7",
