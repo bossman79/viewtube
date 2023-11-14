@@ -292,7 +292,6 @@ const watchPageTitle = computed(() => {
       :title="watchPageTitle"
       :description="`${video?.description?.substring(0, 100)}`"
       :image="`${video?.author.thumbnails?.[2]?.url}`"
-      :video="`${video?.legacyFormats?.[0]?.url}`"
     />
     <VideoLoadingTemplate v-if="videoPending" />
     <!-- <video v-if="!jsEnabled" controls :src="getHDUrl()" class="nojs-player" /> -->
@@ -307,11 +306,7 @@ const watchPageTitle = computed(() => {
       class="video-player-p"
       @video-ended="onVideoEnded"
     /> -->
-    <FlipPlayer
-      v-if="video && !videoPending"
-      :video="video"
-      :start-time="video.initialVideoTime"
-    />
+    <FlipPlayer v-if="video && !videoPending" :video="video" :start-time="video.initialVideoTime" />
     <div v-if="video && !videoPending" class="video-meta">
       <div class="recommended-videos mobile">
         <NextUpVideo v-if="nextUpVideo && settingsStore.autoplayNextVideo" :video="nextUpVideo" />
